@@ -1,0 +1,16 @@
+{
+    "name": "FoundryVTT",
+    "id": "foundryvtt",
+    "version": "0.0.1",
+    "description": "Install Foundry Virtual Tabletop, a self-hosted, modern roleplaying platform.",
+    "options": {
+        "url": {
+            "description": "Timed URL from FoundryVTT.com ; see https://foundryvtt.com/article/installation/ for details.",
+            "type": "string",
+            "default": "",
+            "proposals": [
+                "https://foundryvtt.s3.amazonaws.com/releases/10.291/FoundryVTT-10.291.zip?AWSAccessKeyId=AKIA2KJE5YZ3BCQQ6DH3&Signature=REDACTED%3D&Expires=1684831893"
+            ]
+        }
+    }
+}

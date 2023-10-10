@@ -1,54 +1,42 @@
-# Dev Container Features: Self Authoring Template
+# FoundryVTT devcontainer feature
 
-> This repo provides a starting point and example for creating your own custom [dev container Features](https://containers.dev/implementors/features/), hosted for free on GitHub Container Registry.  The example in this repository follows the [dev container Feature distribution specification](https://containers.dev/implementors/features-distribution/).  
->
-> To provide feedback to the specification, please leave a comment [on spec issue #70](https://github.com/devcontainers/spec/issues/70). For more broad feedback regarding dev container Features, please see [spec issue #61](https://github.com/devcontainers/spec/issues/61).
+## Available features
 
-## Example Contents
+This repository contains a _collection_ of two Features - `foundryvtt` and `foundryvtt-cli`.
 
-This repository contains a _collection_ of two Features - `hello` and `color`. These Features serve as simple feature implementations.  Each sub-section below shows a sample `devcontainer.json` alongside example usage of the Feature.
+### `foundryvtt`
 
-### `hello`
-
-Running `hello` inside the built container will print the greeting provided to it via its `greeting` option.
+Installs the [FoundryVTT](https://foundryvtt.com/) application.
 
 ```jsonc
 {
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
-        "ghcr.io/devcontainers/feature-starter/hello:1": {
-            "greeting": "Hello"
+        "ghcr.io/damien/feature-foundryvtt/foundryvtt:latest": {
+            "url": "https://foundryvtt.s3.amazonaws.com/releases/10.291/FoundryVTT-10.291.zip?AWSAccessKeyId=AKIA2KJE5YZ3BCQQ6DH3&Signature=REDACTED%3D&Expires=1684831893"
         }
     }
 }
 ```
 
-```bash
-$ hello
+### `foundryvtt-cli`
 
-Hello, user.
-```
-
-### `color`
-
-Running `color` inside the built container will print your favorite color to standard out.
+Installs FoundryVTT's [`foundryvtt-cli`](https://github.com/foundryvtt/foundryvtt-cli) and all the dependencies required to run it.
 
 ```jsonc
 {
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
-        "ghcr.io/devcontainers/feature-starter/color:1": {
-            "favorite": "green"
-        }
+        "ghcr.io/damien/feature-foundryvtt/foundryvtt-cli:latest": {}
     }
 }
 ```
 
 ```bash
-$ color
-
-my favorite color is green
+$ fvtt --help
 ```
+
+See `foundry-vtt-cli`'s [Usage](https://github.com/foundryvtt/foundryvtt-cli#usage) documentation for details on how to use `foundryvtt-cli`.
 
 ## Repo and Feature Structure
 
